@@ -1,19 +1,23 @@
 import React from "react";
+import Image from "next/image"; // Εισαγωγή του Next.js Image Component
 
 export default function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-earth-900 text-ivory">
-      {/* Background Image Overlay - Εδώ θα μπει η φωτογραφία του ελαιώνα/μαγαζιού */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-40 transform scale-105 transition-transform duration-1000"
-        style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1471193945509-9ad0617afabf?q=80&w=1920')` 
-        }} // Placeholder εικόνα με ελιές μέχρι να βάλουμε τις δικές σας
+
+      {/* Premium Background Image Implementation */}
+      <Image
+        src="/shop-hero.jpg" // Αν το αρχείο σου είναι .png, άλλαξέ το σε /shop-hero.png
+        alt="Olive Yard by Marinos Store Interior in Exo Chora"
+        fill // Γεμίζει αυτόματα όλο το section
+        priority // Λέει στον browser να τη φορτώσει κατά προτεραιότητα (SEO & Speed)
+        sizes="100vw"
+        className="object-cover object-center opacity-40 transform scale-105 transition-transform duration-1000"
       />
 
       {/* Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-8">
-        
+
         {/* Accent Tag */}
         <span className="inline-block font-sans text-xs uppercase tracking-[0.25em] text-honey-500 bg-olive-700/50 px-4 py-2 rounded-full border border-olive-600/30 backdrop-blur-sm">
           Exo Chora, Zakynthos • Est. 1998
@@ -32,14 +36,14 @@ export default function HeroSection() {
 
         {/* Call to Actions */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-          <a 
-            href="#products" 
+          <a
+            href="#products"
             className="w-full sm:w-auto px-8 py-4 bg-olive-600 hover:bg-olive-700 text-ivory font-sans text-sm font-medium tracking-wider uppercase rounded-md shadow-lg transition-all duration-300"
           >
             Explore Our Products
           </a>
-          <a 
-            href="#contact" 
+          <a
+            href="#contact"
             className="w-full sm:w-auto px-8 py-4 bg-transparent hover:bg-ivory/10 text-ivory border border-ivory/30 font-sans text-sm font-medium tracking-wider uppercase rounded-md backdrop-blur-sm transition-all duration-300"
           >
             Find Our Shop

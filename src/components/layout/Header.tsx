@@ -5,16 +5,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-ivory/90 backdrop-blur-md border-b border-olive-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        
+
         {/* Logo Area */}
         <a href="/" className="flex items-center h-full py-2">
-          <Image 
-            src="/logo.jpg" 
-            alt="Olive Yard by Marinos Logo" 
-            width={180} 
-            height={70} 
-            className="object-contain h-full w-auto" 
-            priority={true} 
+          <Image
+            src="/logo-transparent.png"
+            alt="Olive Yard by Marinos Logo"
+            width={147}
+            height={60}
+            className="object-contain h-full w-auto"
+            priority={true}
           />
         </a>
 
@@ -29,14 +29,14 @@ export default function Header() {
         {/* Actions (Language Switcher & CTA) */}
         <div className="flex items-center gap-6">
           <span className="text-sm font-sans font-bold cursor-pointer hover:text-olive-600">EN / EL</span>
-          <a 
-            href="#contact" 
+          <a
+            href="#contact"
             className="hidden md:inline-block px-5 py-2.5 bg-olive-600 text-ivory text-xs uppercase font-bold tracking-wider rounded-md hover:bg-olive-700 transition-all shadow-md"
           >
             Visit Us
           </a>
         </div>
-        
+
       </div>
     </header>
   );
